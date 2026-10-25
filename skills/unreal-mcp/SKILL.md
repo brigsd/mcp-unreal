@@ -19,7 +19,7 @@ When you start work:
 2. Invoke the tool with `call_tool`: pass `toolset_name`, `tool_name`, and an `arguments` object matching the schema you just read. The result comes back on the same turn. No extra round-trip needed.
 3. Top-level dispatch (omitting `toolset_name`) is reserved for tools registered directly on the MCP server and is rejected for `call_tool` itself.
 
-If the meta-tools themselves aren't available (`list_toolsets` errors, or you don't see `unreal-mcp` in your MCP server list at all), the editor or its MCP server is not running. Don't bluff. Ask the user to launch the editor (and run `ModelContextProtocol.StartServer` in the console if auto-start isn't on), or follow `references/setup.md` to wire up a project that has never been configured.
+If the meta-tools themselves aren't available (`list_toolsets` errors, or you don't see `unreal-mcp` in your MCP server list at all), the editor or its MCP server is not running. Don't bluff. On Windows, start it yourself: `python scripts/editor.py open --project <path.uproject>` launches the editor with the MCP server and blocks until it answers (see `references/operations.md`, "Editor lifecycle"); then ask the user to reconnect `unreal-mcp` in `/mcp`. Otherwise ask the user to launch the editor (and run `ModelContextProtocol.StartServer` in the console if auto-start isn't on), or follow `references/setup.md` to wire up a project that has never been configured.
 
 ## Safety rules
 
@@ -46,7 +46,7 @@ A relevant project skill's instructions take precedence over your generic defaul
 ## Reference files
 
 - `references/setup.md`: first-time MCP server setup for a project that has never been configured (`.uproject` plugin entry, auto-start `.ini`, `.mcp.json` generation).
-- `references/operations.md`: console commands, settings, and a troubleshooting matrix for when things go wrong (port collision, missing toolsets, hangs, empty docked context).
+- `references/operations.md`: editor lifecycle script (`scripts/editor.py`), console commands, settings, and a troubleshooting matrix for when things go wrong (port collision, missing toolsets, hangs, empty docked context).
 
 ## Companion skills
 
