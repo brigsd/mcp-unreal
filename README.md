@@ -4,6 +4,14 @@ Control Unreal Editor directly from Claude Code via MCP. Hundreds of tools expos
 
 ## Contents
 
+### AnimAI — projeto independente
+
+O AnimAI tem raiz própria em `C:\Users\micro\Desktop\AnimAI` e repositório
+[warbookbr/AnimAI](https://github.com/warbookbr/AnimAI). Documentação normativa,
+planos e futuras skills devem ser mantidos lá. O material em `autoria-ia/`
+é histórico e encaminha para a nova raiz; não é mais fonte de implementação.
+Essa transferência não altera as skills nem os hooks Unreal deste plugin.
+
 ### Skills
 
 - **`unreal-mcp`** (`skills/unreal-mcp`) - instructions and workflows for driving the Unreal Editor via MCP.
